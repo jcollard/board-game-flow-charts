@@ -39,7 +39,6 @@ export class Player {
     }
 
     public toString(): string {
-        let prettyHand = "";
         return `Player ${this.id}:
   Hand: ${this.prettyCards(this.hand)}
   In Play: ${this.prettyCards(this.inPlay)}

@@ -16,7 +16,7 @@ export class GameState {
 
     public playerDrawCard(): void {
         this.players.forEach(player => {
-            let nextCard: Card = this.deck.draw();
+            const nextCard: Card = this.deck.draw();
             player.hand.push(nextCard);
         });
     }
@@ -46,7 +46,7 @@ export class GameState {
     }
 
     private getAllCards(): Card[] {
-        let allCards: Card[] = [];
+        const allCards: Card[] = [];
         this.players.forEach(player => {
             player.inPlay.forEach(card => {
                 allCards.push(card);
@@ -56,14 +56,14 @@ export class GameState {
     }
 
     public countValue(value: number): number {
-        let allCards = this.getAllCards();
-        let cardsToCount = allCards.filter(card => card.value === value);
+        const allCards = this.getAllCards();
+        const cardsToCount = allCards.filter(card => card.value === value);
         return cardsToCount.length;
     }
 
     public countColor(color: Color): number {
-        let allCards = this.getAllCards();
-        let cardsToCount = allCards.filter(card => card.color === color);
+        const allCards = this.getAllCards();
+        const cardsToCount = allCards.filter(card => card.color === color);
         return cardsToCount.length;
     }
 
